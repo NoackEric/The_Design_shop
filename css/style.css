@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Karla';
+}
+@font-face {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/karla-v8-latin-regular.eot');
+    /* IE9 Compat Modes */
+    src: local('Karla'), local('Karla-Regular'), url('../fonts/karla-v8-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/karla-v8-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/karla-v8-latin-regular.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/karla-v8-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/karla-v8-latin-regular.svg#Karla') format('svg');
+    /* Legacy iOS */   
+}
+@font-face {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/karla-v8-latin-700.eot'); /* IE9 Compat Modes */
+    src: local('Karla Bold'), local('Karla-Bold'),
+         url('../fonts/karla-v8-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/karla-v8-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/karla-v8-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/karla-v8-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/karla-v8-latin-700.svg#Karla') format('svg'); /* Legacy iOS */
+} 
+body{
+    overflow-x: hidden
+}
+/* Hamburger Nav */
+header {
+    height: 60px;
+    position: fixed;
+    background: #fff;
+    width: 100%;
+}
+.cf:before, .cf:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
+}
+.cf:after {
+    clear: both;
+}
+.logo {
+    float: left;
+    padding-left: 100px;
+    padding-top: 10px;
+    font-size: 20px;
+    /* text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3); */
+    color: black;
+}
+.menu {
+    position: fixed;
+    right: -130%;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 1);
+    transition: right .1s ease;
+}
+ul {
+    list-style-type: none;
+    
+}
+.menuDesktop ul {
+    margin-top: 1%;
+    display: flex;
+    justify-content: flex-end;
+}
+.menuDesktop li {
+    padding-right: 20px;
+    color: black;
+}
+.menu ul{
+    margin-top: 40px;
+}
+.menu li {
+    font-size: 3em;
+    margin: 20px auto;
+    letter-spacing: 5px;
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+}
+.menu li a{
+    color: #ffffff;
+}
+input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: fixed;
+    top: 7px;
+    right: 5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+input:checked~.menu {
+    right: 0;
+    transition: right 1s ease;
+    font-size: .3em;
+}
+#menuToggle span {
+    width: 33px;
+    height: 4px;
+    position: fixed;
+    background: red;
+    border-radius: 3px;
+    top: 15px;
+    right: 12px;
+    z-index: 1;
+}
+span:nth-child(2) {
+    top: 25px;
+    background-color: #cdcdcd;
+}
+span:nth-child(3) {
+    top: 35px;
+    background-color: red;
+}
+input:checked~span {
+    opacity: 1;
+    transform-origin: top left;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: yellow;
+    transition: transform 1s ease;
+}
+input:checked~span:nth-child(2) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+    background: green;
+    transition: transform 1s ease, opacity 1s;
+}
+input:checked~span:nth-child(3) {
+    transform-origin: bottom left;
+    transform: rotate(-45deg) translate(0, -1px);
+    background: green;
+    transition: transform 1s ease;
+}
+#menuToggle {
+    display: none;
+}
+/* Shop Inhalt */
+.single{
+    width: 100vw;
+}
+.single div{
+    width: 90%;
+    margin: 0 auto;
+}
+.single img{
+    width: 100%;
+    display: block;
+}
+.single p:nth-of-type(1){
+    float: left; 
+}
+.single p:nth-of-type(2){
+    float: right; 
+}
+.single p:nth-of-type(3){
+    color: #BFBFBF; 
+    clear: both;
+}
+a{
+    display: block;
+    padding-top: 3em;
+    text-decoration: none;
+    color: #BFBFBF;
+}
+/* Shopinhalt HOVER */
+img:hover{
+    opacity: .4;
+    transition: all .8s ease;
+}
+/* GRID SHOP */
+.grid{
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    gap: 25px;
+    width: 91%;
+    margin: 0 auto;
+}
+.grid div{
+    width: 100%;
+}
+.grid div img{
+    width: 100%;
+}
+.grid p:nth-of-type(1){
+    float: left; 
+}
+.grid p:nth-of-type(2){
+    float: right; 
+}
+.grid p:nth-of-type(3){
+    color: #BFBFBF; 
+    clear: both;
+}
+/*  Bannersection */
+.end{
+    display: grid;
+    grid-template-columns: auto  auto auto auto ;
+    grid-template-rows: 22% 22% 22% 22% ;
+    height: 40vh;
+    width: 91%;
+    margin: 5% auto;  
+}
+.müll{
+    width: 300px;
+    height: 91px;
+    border: 2px solid rgb(181, 181, 181);
+    text-align: center;
+}
+.müll:not(:nth-of-type(1)){
+    margin-left: 1.3em;
+}
+.müll>a{
+    padding: 0;
+}
+.müll>h3{
+    padding-top: 1.2em;
+}
+.eins{
+    text-align: left;
+}
+.eins>p{
+    padding-top: 3em;
+    font-size: .9em;
+
+}
+.eins p a{
+    display: inline-block;
+    color: black;
+    padding: 0;
+    font-weight: 700;
+}
+.zwei{
+    text-align: center;
+}
+.zwei>a:nth-of-type(1){
+    padding-top: 3em;
+    display: block;
+    color: black;
+    font-size: .9em;
+}
+.zwei>a:nth-of-type(2){
+    padding-top: 0em;
+    display: block;
+    color: black;
+    font-size: .9em;
+}
+.drei{
+    text-align: left;
+}
+.drei>a{
+    color: black;
+    font-size: .9em;
+}
+.drei strong{
+    display: inline-block;
+    color: black;
+    padding: 0;
+    font-weight: 700;
+}
+.vier{
+    text-align: left;
+}
+.vier>a:nth-of-type(1){
+    padding-top: 3em;
+}
+.vier>a{
+    padding: 0;
+    color: black;
+}
+.end a:hover{
+    opacity: .4;
+}
+/* FOOTTER  FOOTTER  FOOTTER  FOOTTER  FOOTTER  FOOTTER */
+footer{
+    margin-left: 3.8em;
+    width: 100vw;
+    height: 6vh;
+}
+footer p a{
+    display: inline-block;
+    color: black;
+    padding-top: 0;
+}
+.eins{
+    grid-area: 3 / 1 / 4/ 3;
+    width: 55%;
+}
+.zwei{
+    grid-area: 3 / 2 / 4/ 3;
+    width: 55%;
+}
+.drei{
+    grid-area: 3 / 3 / 4/ 3;
+    width: 55%;
+}
+.vier{
+    grid-column: 4 / -1 ;
+    grid-row: 3 / -1;
+    width: 55%;
+}
+
+/* ----Mediaquery---- ----Mediaquery---- ----Mediaquery---- ----Mediaquery---- */
+@media only screen and (max-width: 700px) {
+    #menuToggle {
+        display: block;
+    }
+    .menuDesktop {
+        display: none;
+    }
+    .grid{
+        display: block;
+    }
+    .end{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+    .end{
+        display: block;
+    }
+    footer{
+        display: block;
+        margin-top: 30em;
+    }
+}
+
+
+
+
+
+
+<div>
+<a href="https://amzn.to/2YWPz3N"><img src="img/h2.png" alt=""></a>
+<p>Sayl Office Chair White</p>
+<p>$599.00</p>
+<p>Herman Miller</p>
+</div>
+
+
+
+
+<div>
+<a href="https://amzn.to/2G84CiT"><img src="img/h8.png" alt=""></a>
+<p>Dipped Canteen</p>
+<p>$28.00</p>
+<p>Corkcicle</p>
+</div>
+
+
+<section class="single">
+<div>
+    <a href="https://amzn.to/2UFHfGt"><img src="img/h4.png" alt=""></a>
+    <p>Black Side Chair</p>
+    <p>$54.00</p>
+    <p>Eames Style</p>
+</div>
+</section>
