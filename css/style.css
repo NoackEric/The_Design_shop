@@ -184,7 +184,7 @@ img:hover{
 /* GRID SHOP */
 .grid{
     display: grid;
-    grid-template-columns: auto auto auto ;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 25px;
     width: 91%;
     margin: 0 auto;
